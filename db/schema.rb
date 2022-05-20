@@ -13,13 +13,13 @@
 ActiveRecord::Schema.define(version: 2022_05_20_122503) do
 
   create_table "factures", force: :cascade do |t|
-    t.integer "recipent_id", null: false
+    t.integer "recipient_id", null: false
     t.datetime "limite"
     t.boolean "sold", default: false
     t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["recipent_id"], name: "index_factures_on_recipent_id"
+    t.index ["recipient_id"], name: "index_factures_on_recipient_id"
   end
 
   create_table "recipients", force: :cascade do |t|
@@ -29,5 +29,5 @@ ActiveRecord::Schema.define(version: 2022_05_20_122503) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "factures", "recipents"
+  add_foreign_key "factures", "recipients"
 end

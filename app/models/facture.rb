@@ -1,3 +1,3 @@
 class Facture < ApplicationRecord
-  belongs_to :recipent
+  belongs_to :recipient
 end

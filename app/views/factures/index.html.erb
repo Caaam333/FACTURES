@@ -1,0 +1,13 @@
+<h1> INDEX</h1>
+
+<div>
+  <%= link_to "Add a new Facture", new_facture_path, class: 'btn btn-primary' %>
+</div>
+
+<ul>
+  <% @factures.each do |facture| %>
+    <li><%= link_to facture.limite, facture_path(facture) %></li>
+    <li><%= link_to facture.price, facture_path(facture) %></li>
+    <li><%= link_to facture.sold, facture_path(facture) %></li>
+  <% end %>
+</ul>
