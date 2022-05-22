@@ -9,9 +9,9 @@ class FacturesController < ApplicationController
   end
 
   def new
-    @facture = Facture.new
+    @facture = Facture.new(params[:facture])
     # @facture.recipient_id = params[:recipient_id]
-    @recipient = Recipient.find(params[:recipient_id])
+    # @recipient = Recipient.find(params[:recipient_id])
   end
 
   def create

@@ -1,0 +1,9 @@
+<h1>SHOW DESTINATAIRES</h1>
+
+<h2><%= @recipient.name %></h2>
+<p><%= @recipient.description %></p>
+
+<%= link_to "Delete #{@recipient.name}",
+            recipient_path(@recipient),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
