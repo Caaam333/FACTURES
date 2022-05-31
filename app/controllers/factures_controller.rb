@@ -16,8 +16,9 @@ class FacturesController < ApplicationController
 
   def create
     @facture = Facture.new(facture_params)
-    @recipient = Recipient.find(params[:recipient_id])
-    @facture.recipient = @recipient
+    # @recipient = Recipient.find(params[:recipient_id])
+    # @facture.recipient = @recipient
+    # @facture.save
 
     if @facture.save
       redirect_to facture_path(@facture)
@@ -47,6 +48,6 @@ class FacturesController < ApplicationController
   private
 
   def facture_params
-    params.require(:facture).permit(:recipient_id, :price, :limite, :sold)
+    params.require(:facture).permit(:recipient_id, :id, :price, :limite, :sold)
   end
 end

@@ -30,7 +30,7 @@ class RecipientsController < ApplicationController
   private
   
   def recipient_params
-    params.require(:recipient).permit(:name, :description)
+    params.require(:recipient).permit(:name, :id, :description)
   end
   
 end
