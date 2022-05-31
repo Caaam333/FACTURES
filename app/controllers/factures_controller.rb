@@ -6,6 +6,7 @@ class FacturesController < ApplicationController
 
   def show
     @facture = Facture.find(params[:id])
+    @recipient = Recipient.find(params[:id])
   end
 
   def new

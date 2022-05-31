@@ -1,10 +1,13 @@
-<h1>SHOW FACTURE</h1>
+<h1>VOTRE FACTURE</h1>
 
-<h2><%= @facture.recipient_id %></h2>
+<h2>Pour <%= @facture.recipient_id.value %></h2>
 <p><%= @facture.price %> CHF</p>
 <p><%= @facture.sold %></p>
 
-<%= link_to "Delete #{@facture.price}",
+<%= link_to 'Liste factures', factures_path %> |
+<%= link_to 'Modifier', edit_facture_path(@facture) %> |
+
+<%= link_to "Supprimer",
             facture_path(@facture),
             method: :delete,
-            data: { confirm: "Are you sure?" } %>
+            data: { confirm: "Tu es sûr ?" } %>
