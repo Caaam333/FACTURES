@@ -1,14 +1,25 @@
-<h1> INDEX FACTURES</h1>
+<h1> VOS FACTURES</h1>
+<div>
+  <%= link_to "Récapitulatif", root_path %> |
+  <%= link_to "Liste des bénéficiaires", recipients_path, class: '' %> |
+  <%= link_to "Liste des factures", factures_path, class: '' %>
+</div>
 
 <div>
+  ______
   <%= link_to "nouvelle facture", new_facture_path, class: 'btn btn-primary' %>
   <%= link_to "nouveau destinataire", new_recipient_path, class: 'btn btn-primary' %>
+  ______
 </div>
 
 <ul>
   <% @factures.each do |facture| %>
-    <li><%= link_to facture.limite, facture_path(facture) %></li>
-    <li><%= link_to facture.price, facture_path(facture) %></li>
-    <li><%= link_to facture.sold, facture_path(facture) %></li>
+  ____________________________
+    <%= link_to facture_path(facture) do %>
+    <li>Destinataire : <%= facture.recipient.name %></li>
+    <li>Date limite : <%= facture.limite.strftime("%d/%m/%Y") %></li>
+    <li>Montant : <%= facture.price %> CHF</li>
+    <%# <li>Payé<%= link_to facture.sold, facture_path(facture) %></li>
+    <% end %>
   <% end %>
 </ul>

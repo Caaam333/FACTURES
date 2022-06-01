@@ -1,3 +1,3 @@
 class Recipient < ApplicationRecord
-  has_many :factures
+  has_many :factures, dependent: :destroy
 end

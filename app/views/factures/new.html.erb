@@ -14,7 +14,6 @@
 <%#<% end %>
 
 <%= form_for(@facture) do |f| %>
-  <%# <%= f.hidden_field :recipient_id, value: 1 %>
   <%= f.collection_select :recipient_id, Recipient.order(:name), :id, :name %>
   <%= f.date_field :limite %>
   <%= f.number_field :price %>
