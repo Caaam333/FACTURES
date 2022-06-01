@@ -1,0 +1,59 @@
+#home-page {
+  // h1 {
+  //   color: $darker;
+  // }
+  width: 90%;
+
+  h2 {
+    color: $darker;
+  }
+
+  svg, img {
+    width: 2em;
+    height: 2em;
+    display: flex;
+    fill: $darker;
+    color: $darker;
+  }
+
+  .home-r-card {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid $darker;
+    border-radius: 4px;
+  }
+
+  .home-display-r-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .home-display-f-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home-f-name, .home-f-price {
+    // color: red
+    width: 50%;
+    background-color: $dark;
+    margin: 2px;
+    padding: 1em;
+    border-radius: 0px 0px 0px 0px;
+  }
+
+  // .home-f-price {
+  //   // color: blue
+  // }
+
+  .home-f-line {
+    display: flex;
+    // justify-content: center;
+    // width: 75%;
+  }
+}

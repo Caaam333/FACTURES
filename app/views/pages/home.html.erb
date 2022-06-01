@@ -1,18 +1,52 @@
-<h1>VUE D'ENSEMBLE</h1>
-<h2><%= link_to "Liste des bénéficiaires", recipients_path, class: '' %></h2>
-<div>
-  <% @recipients.each do |recipient| %>
-    <p><%= recipient.name %></p>
-  <% end %>
-<div>
-<h2><%= link_to "Liste des factures", factures_path, class: '' %></h2>
-<div>
-  <% @factures.each do |facture| %>
-    <p><%= facture.recipient.name %> <%= facture.price %></p>
-  <% end %>
-<div>
-<h2>Ajout rapide</h2>
-<div>
-  <%= link_to "nouvelle facture", new_facture_path, class: 'btn btn-primary' %>
-  <%= link_to "nouveau destinataire", new_recipient_path, class: 'btn btn-primary' %>
+<div id="home-page">
+  <%# <h1>VUE D'ENSEMBLE</h1> %>
+  <div>
+    <h2><%= link_to "Liste des bénéficiaires", recipients_path, class: '' %></h2>
+    <div class="home-display-r-cards">
+      <% @recipients.each do |recipient| %>
+        <p class="home-r-card"><%= recipient.name %></p>
+      <% end %>
+    </div>
+  </div>
+  <div>
+    <h2><%= link_to "Liste des factures", factures_path, class: '' %></h2>
+    <div class="home-display-f-cards">
+      <% @factures.each do |facture| %>
+        <div class="home-f-line">
+          <p class="home-f-name"><%= facture.recipient.name %></p> 
+          <p class="home-f-price"><%= facture.price %></p>
+          <a href="<%= edit_facture_path(facture) %>" class="home-f-price">
+            <%= render inline: Rails.root.join("app/assets/images/edit.svg").read %>
+          </a>
+          <a href="<%= facture_path(facture) %>" data-method="delete" class="home-f-price">
+            <%= render inline: Rails.root.join("app/assets/images/suppr.svg").read %>
+          </a>
+          <%= link_to image_tag('suppr.svg'),
+              facture_path(facture),
+              method: :delete,
+              data: { confirm: "Tu es sûr ?" },
+              class: "home-f-price" %>
+
+          <%= link_to facture_path(facture) do %>
+              <%= image_tag "suppr.svg",
+              method: :delete,
+              data: { confirm: "Tu es sûr ?" },
+              class: "home-f-price" %>
+          <% end %>
+        
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
+
+
+<%#<a href="<%= book_path(@book)">Improve Your Ruby Skills</a> %>
+
+<%# <p class="home-f-price"><%= link_to edit_facture_path do %>
+<%#                                     <%= link_to image_tag('edit.svg')%>
+<%#                                   <% end %> </p>
+<%#           <p class="home-f-price"><%= link_to image_tag('suppr.svg'),
+<%#             facture_path(@facture),
+<%#             method: :delete,
+<%#             data: { confirm: "Tu es sûr ?" } %></p>
