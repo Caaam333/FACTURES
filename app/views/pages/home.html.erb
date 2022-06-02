@@ -14,25 +14,13 @@
       <% @factures.each do |facture| %>
         <div class="home-f-line">
           <p class="home-f-name"><%= facture.recipient.name %></p> 
-          <p class="home-f-price"><%= facture.price %></p>
-          <a href="<%= edit_facture_path(facture) %>" class="home-f-price">
+          <p class="home-f-block"><%= facture.price %></p>
+          <a href="<%= edit_facture_path(facture) %>" class="home-f-block">
             <%= render inline: Rails.root.join("app/assets/images/edit.svg").read %>
           </a>
-          <a href="<%= facture_path(facture) %>" data-method="delete" class="home-f-price">
+          <a href="<%= facture_path(facture) %>" data-method="delete" data-confirm="On est sûr ?" rel="nofollow" class="home-f-block">
             <%= render inline: Rails.root.join("app/assets/images/suppr.svg").read %>
           </a>
-          <%= link_to image_tag('suppr.svg'),
-              facture_path(facture),
-              method: :delete,
-              data: { confirm: "Tu es sûr ?" },
-              class: "home-f-price" %>
-
-          <%= link_to facture_path(facture) do %>
-              <%= image_tag "suppr.svg",
-              method: :delete,
-              data: { confirm: "Tu es sûr ?" },
-              class: "home-f-price" %>
-          <% end %>
         
         </div>
       <% end %>

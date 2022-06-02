@@ -2,6 +2,15 @@ class FacturesController < ApplicationController
   
   def index
     @factures = Facture.all
+
+    if @facture.sold == true
+      puts "réglée"
+    else
+      puts "à payer"
+    end
+
+    @factures_sold = Facture.where("end_date < :today", {today: Date.today}).order(created_at: :desc)
+    @factures_not_sold = Facture.where("end_date >= :today", {today: Date.today}).order(created_at: :desc)
   end
 
   def show
@@ -43,7 +52,7 @@ class FacturesController < ApplicationController
     @facture = Facture.find(params[:id])
     @facture.destroy
 
-    redirect_to factures_path
+    redirect_to root_path
   end
 
   private

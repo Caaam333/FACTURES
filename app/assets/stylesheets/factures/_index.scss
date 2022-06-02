@@ -1,3 +1,21 @@
-// Place all the styles related to the Factures controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+#index-f-page{
+  h1 {
+    color: $darker;
+    text-decoration: underline;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  ul {
+    padding-left: 0px;
+  }
+  
+  .index-f-cards {
+    border: 2px;
+    margin: 10px 20px;
+    border: 2px solid $dark;
+    border-radius: 4px;
+    padding: 10px 10px;
+  }
+
+}
