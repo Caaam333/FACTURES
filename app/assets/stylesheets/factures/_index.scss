@@ -6,12 +6,16 @@
     margin-bottom: 50px;
   }
 
+  h2 {
+    color: $dark;
+  }
+
   ul {
     padding-left: 0px;
   }
-  
+
   .index-f-cards {
-    border: 2px;
+    // border: 2px;
     margin: 10px 20px;
     border: 2px solid $dark;
     border-radius: 4px;

@@ -1,3 +1,33 @@
-// Place all the styles related to the Recipients controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+#index-r-page {
+  h1 {
+    color: $darker;
+    text-decoration: underline;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  h2 {
+    color: $dark;
+  }
+  
+  ul {
+    padding-left: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .index-r-cards {
+    // border: 2px;
+    margin: 10px 20px;
+    border: 4px solid $dark;
+    border-radius: 4px;
+    padding: 10px 10px;
+  }
+
+  .r-name {
+    font-weight: bold;
+    color: $dark;
+  }
+
+}

@@ -1,31 +1,8 @@
 
-<%# <%= simple_form_for [ facture, recipient ] do |f| %>
-  <%# <%= f.association :name %>
-  <%# <%= f.association :description %>
-  <%# <%= f.input :price %>
-  <%# <%= f.input :limite  %>
-  <%# <%= f.input :sold %>
-  <%# <%= f.button :submit, "VALIDER", class: ""%>
-<%# <% end %>
-
-
-<%# <div class="justify-content-md-center container">
-    <%= simple_form_for @candidate do |f| %>
-<%#    <div class="container input-basic"><%= f.input :first_name, label: 'Prénom du candidat' %></div>
- <%#     <%= f.input :last_name, label: 'Nom du candidat' %>
-      <%# <%= f.input :photos, label: 'Photo(s) 5 max.' %>
-  <%#    <%= f.input :description %>
-  <%#    <%= f.association :political_party, label: 'Parti politique' %>
-   <%#   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-   <%#   <%= f.input :price_per_day, label: 'Prix' %>
-    <%#  <%= f.button :submit, class:"btn btn-outline-danger" %>
-  <%#  <% end %>
-  <%# </div> %> %>
-
-<%= form_for(facture) do |f| %>
-  <%= f.collection_select :recipient_id, Recipient.order(:name), :id, :name %>
-  <%= f.date_field :limite %>
-  <%= f.number_field :price %>
-  <%= f.check_box :sold %>
-  <%= f.submit %>
+<%= simple_form_for @facture do |f| %>
+  <%= f.association :recipient %>
+  <%= f.input :price %>
+  <%= f.input :limite  %>
+  <%= f.input :sold %>
+  <%= f.button :submit, "VALIDER", class: "" %>
 <% end %>

@@ -1,23 +1,12 @@
-<h1> INDEX DESTINATAIRES</h1>
+<div id="index-r-page">
+  <h1>VOS BÉNÉFICIAIRES</h1>
 
-<div>
-  <%= link_to "Récapitulatif", root_path %> |
-  <%= link_to "Liste des bénéficiaires", recipients_path, class: '' %> |
-  <%= link_to "Liste des factures", factures_path, class: '' %>
+  <ul>
+    <% @recipients.each do |recipient| %>
+      <div  class="index-r-cards">
+        <li><%= link_to recipient.name, recipient_path(recipient), class: "r-name" %></li>
+        <li><%= link_to recipient.description, recipient_path(recipient), class: "r-desc" %></li>
+      </div>
+    <% end %>
+  </ul>
 </div>
-
-<div>
-  ______
-  <%= link_to "nouvelle facture", new_facture_path, class: 'btn btn-primary' %>
-  <%= link_to "nouveau destinataire", new_recipient_path, class: 'btn btn-primary' %>
-  ______
-</div>
-
-<ul>
-  <% @recipients.each do |recipient| %>
-    <li>_______________</li>
-    <li><%= link_to recipient.name, recipient_path(recipient) %></li>
-    <li><%= link_to recipient.description, recipient_path(recipient) %></li>
-    <li>_______________</li>
-  <% end %>
-</ul>

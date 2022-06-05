@@ -1,16 +1,16 @@
 class FacturesController < ApplicationController
   
   def index
-    @factures = Facture.all
+    # @factures = Facture.all
 
-    if @facture.sold == true
-      puts "réglée"
-    else
-      puts "à payer"
-    end
+    # if @facture.sold == true
+    #   puts "réglée"
+    # else
+    #   puts "à payer"
+    # end
 
-    @factures_sold = Facture.where("end_date < :today", {today: Date.today}).order(created_at: :desc)
-    @factures_not_sold = Facture.where("end_date >= :today", {today: Date.today}).order(created_at: :desc)
+    @factures_sold = Facture.where(sold: "true").order(created_at: :desc).limit(3)
+    @factures_not_sold = Facture.where(sold: "false").order(created_at: :desc)
   end
 
   def show

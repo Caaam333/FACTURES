@@ -1,14 +1,30 @@
 <div id="index-f-page">
-  <h1> VOS FACTURES</h1>
+  <h1>VOS FACTURES</h1>
   <div>
+    <h2>À PAYER</h2>
     <ul>
-      <% @factures.each do |facture| %>
+      <% @factures_not_sold.each do |facture| %>
         <%= link_to facture_path(facture) do %>
         <div class="index-f-cards">
-          <li>Pour <%= facture.recipient.name %></li>
+          <li><%= facture.recipient.name %></li>
           <li>Avant le : <%= facture.limite.strftime("%d/%m/%Y") %></li>
           <li>Montant : <%= facture.price %> CHF</li>
-          <li>Payé: <%= facture.sold %></li>
+          <%# <li>Payé: <%= facture.sold %></li>
+        </div>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+  <div>
+    <h2>RÉGLÉES</h2>
+    <ul>
+      <% @factures_sold.each do |facture| %>
+        <%= link_to facture_path(facture) do %>
+        <div class="index-f-cards">
+          <li><%= facture.recipient.name %></li>
+          <li>Avant le : <%= facture.limite.strftime("%d/%m/%Y") %></li>
+          <li>Montant : <%= facture.price %> CHF</li>
+          <%# <li>Payé: <%= facture.sold %></li> 
         </div>
         <% end %>
       <% end %>

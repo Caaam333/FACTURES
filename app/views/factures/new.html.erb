@@ -1,22 +1,7 @@
-<h1>NEW FACTURE</h1>
+<div id="new-f-page">
+  <h1>NEW FACTURE</h1>
 
-<%# <%= render "form", facture: @facture %> 
+  <%= render "form", facture: @facture %>
 
-<%#<%= simple_form_for [ @facture, @recipient ] do |f| %>
-<%#  <%= f.association :name %>
-<%#  <%= f.hidden_field :name, {:value => @recipient.name} %>
-<%#  <%= f.hidden_field :description, {:value => @recipient.description} %>
-<%#  <%= f.association :description %>
-<%#  <%= f.input :price %>
-<%#  <%= f.input :limite  %>
-<%#  <%= f.input :sold %>
-<%#  <%= f.button :submit, "VALIDER", class: ""%>
-<%#<% end %>
 
-<%= form_for(@facture) do |f| %>
-  <%= f.collection_select :recipient_id, Recipient.order(:name), :id, :name %>
-  <%= f.date_field :limite %>
-  <%= f.number_field :price %>
-  <%= f.check_box :sold %>
-  <%= f.submit %>
-<% end %>
+</div>

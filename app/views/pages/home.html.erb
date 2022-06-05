@@ -9,9 +9,27 @@
     </div>
   </div>
   <div>
-    <h2><%= link_to "Liste des factures", factures_path, class: '' %></h2>
+    <h2><%= link_to "Liste des factures à payer", factures_path, class: '' %></h2>
     <div class="home-display-f-cards">
-      <% @factures.each do |facture| %>
+      <% @factures_not_sold.each do |facture| %>
+        <div class="home-f-line">
+          <p class="home-f-name"><%= facture.recipient.name %></p> 
+          <p class="home-f-block"><%= facture.price %></p>
+          <a href="<%= edit_facture_path(facture) %>" class="home-f-block">
+            <%= render inline: Rails.root.join("app/assets/images/edit.svg").read %>
+          </a>
+          <a href="<%= facture_path(facture) %>" data-method="delete" data-confirm="On est sûr ?" rel="nofollow" class="home-f-block">
+            <%= render inline: Rails.root.join("app/assets/images/suppr.svg").read %>
+          </a>
+        
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div>
+    <h2><%= link_to "Liste des factures réglées", factures_path, class: '' %></h2>
+    <div class="home-display-f-cards">
+      <% @factures_sold.each do |facture| %>
         <div class="home-f-line">
           <p class="home-f-name"><%= facture.recipient.name %></p> 
           <p class="home-f-block"><%= facture.price %></p>
