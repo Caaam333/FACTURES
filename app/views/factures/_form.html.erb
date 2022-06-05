@@ -3,8 +3,8 @@
   <div class="form-f">
     <%= f.association :recipient, label: 'BÉNÉFICIAIRES', class: "" %>
     <%= f.input :price, label: 'MONTANT', class: "" %>
-    <%= f.input :limite, as: :string, label: 'DATE LIMITE', required: false, class: "datepicker" %>
-    <%= f.input :sold, as: :radio_buttons, label: 'PAYÉ', class: "" %>
+    <%= f.input :limite, label: 'DATE LIMITE', as: :string, required: false, input_html: {class: "datepicker"} %>
+    <%= f.input :sold, as: :radio_buttons, :collection => [['OUI',true],['NON',false]], label: 'PAYÉ', class: "" %>
     <%= f.button :submit, "VALIDER", class: "" %>
   </div>
 <% end %>

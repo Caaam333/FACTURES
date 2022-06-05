@@ -2,6 +2,7 @@
 
 <h2>Pour <%= @facture.recipient.name %></h2>
 <p><%= @facture.price %> CHF</p>
+<p><%= @facture.limite.strftime("%d/%m/%Y") %></p>
 <p><%= @facture.sold %></p>
 
 <%= link_to 'Liste factures', factures_path %> |

@@ -1,10 +1,10 @@
-#new-f-page, #new-f-page {
+#new-f-page, #edit-f-page {
   h1 {
     color: $darker;
     text-decoration: underline;
   }
 
-  .new_facture {
+  .new_facture, .edit_facture {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -44,7 +44,11 @@
       color: $darker;
       font-weight: 600;
     }
-  
+    fieldset {
+      border: 2px solid $background;
+      border-radius: 5px;
+      // width: 20em;
+    }
   }
 
 

@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.7'
 # _______
 gem 'simple_form'
 gem 'bootstrap'
+gem 'flatpickr'
 
 # _______
 # Use Active Storage variant

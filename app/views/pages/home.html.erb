@@ -13,12 +13,15 @@
     <div class="home-display-f-cards">
       <% @factures_not_sold.each do |facture| %>
         <div class="home-f-line">
-          <p class="home-f-name"><%= facture.recipient.name %></p> 
-          <p class="home-f-block"><%= facture.price %></p>
-          <a href="<%= edit_facture_path(facture) %>" class="home-f-block">
+          <%= link_to facture_path(facture) do %>
+            <p class="home-f-name"><%= facture.recipient.name %></p> 
+            <p class="home-f-block"><%= facture.price %></p>
+            <p class="home-f-block"><%= facture.limite.strftime("%d.%m.%y") %></p>
+          <%= end %>
+          <a href="<%= edit_facture_path(facture) %>" class="home-f-icone">
             <%= render inline: Rails.root.join("app/assets/images/edit.svg").read %>
           </a>
-          <a href="<%= facture_path(facture) %>" data-method="delete" data-confirm="On est sûr ?" rel="nofollow" class="home-f-block">
+          <a href="<%= facture_path(facture) %>" data-method="delete" data-confirm="On est sûr ?" rel="nofollow" class="home-f-icone">
             <%= render inline: Rails.root.join("app/assets/images/suppr.svg").read %>
           </a>
         

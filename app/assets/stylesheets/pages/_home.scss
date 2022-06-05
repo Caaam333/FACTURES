@@ -42,7 +42,7 @@
     // margin-right: auto;
   }
 
-  .home-f-block, .home-f-name {
+  .home-f-block, .home-f-name, .home-f-icone {
     // color: red
     // width: 50%;
     background-color: $dark;
@@ -63,6 +63,10 @@
   .home-f-block {
     min-width: 50px;
     max-width: 70px;
+  }
+  .home-f-icone {
+    width: 20px;
+    padding: 7px;
   }
 
   .home-f-line {
