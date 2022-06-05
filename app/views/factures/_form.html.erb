@@ -1,8 +1,10 @@
 
 <%= simple_form_for @facture do |f| %>
-  <%= f.association :recipient %>
-  <%= f.input :price %>
-  <%= f.input :limite  %>
-  <%= f.input :sold %>
-  <%= f.button :submit, "VALIDER", class: "" %>
+  <div class="form-f">
+    <%= f.association :recipient, label: 'BÉNÉFICIAIRES', class: "" %>
+    <%= f.input :price, label: 'MONTANT', class: "" %>
+    <%= f.input :limite, as: :string, label: 'DATE LIMITE', required: false, class: "datepicker" %>
+    <%= f.input :sold, as: :radio_buttons, label: 'PAYÉ', class: "" %>
+    <%= f.button :submit, "VALIDER", class: "" %>
+  </div>
 <% end %>

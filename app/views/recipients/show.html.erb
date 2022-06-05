@@ -3,6 +3,8 @@
 <h2><%= @recipient.name %></h2>
 <p><%= @recipient.description %></p>
 
+<%= link_to 'Modifier', edit_recipient_path(@recipient) %> |
+
 <%= link_to "Delete #{@recipient.name}",
             recipient_path(@recipient),
             method: :delete,

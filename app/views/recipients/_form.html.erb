@@ -1,5 +1,7 @@
 <%= simple_form_for @recipient do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.button :submit, "VALIDER", class: "" %>
+  <div class="form-r">
+    <%= f.input :name, label: 'NOM', class: "" %>
+    <%= f.input :description, label: 'DESCRIPTION', class: "" %>
+    <%= f.button :submit, "VALIDER", class: "" %>
+  </div>
 <% end %>

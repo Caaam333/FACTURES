@@ -1,28 +1,101 @@
+#new-r-page, #edit-r-page {
 
-.new_recipient {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: $dark;
-  width: 20em;
-  padding: 0px 10px;
-  border-radius: 5px;
-  margin-right: auto;
-  margin-left: auto;
-  height: 35em;
+  h1 {
+    color: $darker;
+    text-decoration: underline;
+  }
+  #new_recipient, .edit_recipient {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $dark;
+    width: 20em;
+    padding: 0px 10px;
+    border-radius: 5px;
+    margin-right: auto;
+    margin-left: auto;
+    height: 35em;
+  }
+  
+  .form-r {
+    
+    input#recipient_name, textarea#recipient_description {
+      width: 20em;
+      padding: 20px 10px;
+      border-radius: 10px;
+      border: 3px solid $dark;
+      // margin-right: auto;
+      // margin-left: auto;
+      margin: 20px 10px;
+      border: 2px solid $background;
+    }
+    
+    label.string.optional, label.text.optional {
+      color: $background;
+      font-weight: 600;
+    }
+    
+    input.btn {
+      padding: 10px 5px;
+      border-radius: 5px;
+      border: 3px solid $dark;
+      background-color: $background;
+      border: 3px solid $darker;
+      color: $darker;
+      font-weight: 600;
+    }
+  
+  }
 }
 
-input#recipient_name, input#recipient_description {
-  width: 20em;
-  padding: 20px 10px;
-  border-radius: 5px;
-  border: 3px solid $dark;
-  margin-right: auto;
-  margin-left: auto;
-  margin: 0px 10px;
-}
+// __________________________________________________________
+// __________________________________________________________
+// __________________________________________________________
 
-label {
-  margin: 20px;
-}
+// #edit-r-page {
+
+//   .edit_recipient {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     background-color: $dark;
+//     width: 20em;
+//     padding: 0px 10px;
+//     border-radius: 5px;
+//     margin-right: auto;
+//     margin-left: auto;
+//     height: 35em;
+//   }
+  
+//   .form-r {
+    
+//     input#recipient_name, textarea#recipient_description {
+//       width: 20em;
+//       padding: 20px 10px;
+//       border-radius: 10px;
+//       border: 3px solid $dark;
+//       // margin-right: auto;
+//       // margin-left: auto;
+//       margin: 20px 10px;
+//       border: 2px solid $background;
+//       align
+//     }
+    
+//     label.string.optional, label.text.optional {
+//       color: $background;
+//       // color: $dark;
+//       font-weight: 600;
+//     }
+    
+//     input.btn {
+//       padding: 10px 5px;
+//       border-radius: 5px;
+//       border: 3px solid $dark;
+//       background-color: $background;
+//       border: 3px solid $darker;
+//       color: $darker;
+//       font-weight: 600;
+//     }
+//   }
+// }
 

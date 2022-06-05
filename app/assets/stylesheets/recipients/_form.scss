@@ -1,0 +1,52 @@
+#new-f-page, #new-f-page {
+  h1 {
+    color: $darker;
+    text-decoration: underline;
+  }
+
+  .new_facture {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $dark;
+    width: 20em;
+    padding: 0px 10px;
+    border-radius: 5px;
+    margin-right: auto;
+    margin-left: auto;
+    height: 35em;
+  }
+
+  .form-f {
+    
+    .form-control {
+      width: 20em;
+      padding: 20px 10px;
+      border-radius: 10px;
+      border: 3px solid $dark;
+      // margin-right: auto;
+      // margin-left: auto;
+      margin: 20px 10px;
+      border: 2px solid $background;
+    }
+    
+    label, legend {
+      color: $background;
+      font-weight: 600;
+    }
+    
+    input.btn {
+      padding: 10px 5px;
+      border-radius: 5px;
+      border: 3px solid $dark;
+      background-color: $background;
+      border: 3px solid $darker;
+      color: $darker;
+      font-weight: 600;
+    }
+  
+  }
+
+
+}
+
