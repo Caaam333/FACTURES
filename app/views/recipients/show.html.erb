@@ -1,11 +1,18 @@
-<h1>SHOW DESTINATAIRES</h1>
+<div id="show-r">
+  <h1>VOTRE BÉNÉFICIAIRE</h1>
 
-<h2><%= @recipient.name %></h2>
-<p><%= @recipient.description %></p>
+  <h2><%= @recipient.name %></h2>
+  <p><%= @recipient.description %></p>
 
-<%= link_to 'Modifier', edit_recipient_path(@recipient) %> |
+  <div>
+    <a href="<%= edit_recipient_path(@recipient) %>" class="home-f-icone">
+      <%= render inline: Rails.root.join("app/assets/images/edit.svg").read %>
+    </a>
+    <a href="<%= recipient_path(@recipient) %>" data-method="delete" data-confirm="On est sûr ?" rel="nofollow" class="home-f-icone">
+      <%= render inline: Rails.root.join("app/assets/images/suppr.svg").read %>
+    </a>
+  </div>
 
-<%= link_to "Delete #{@recipient.name}",
-            recipient_path(@recipient),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
+
+
+</div>

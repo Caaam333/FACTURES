@@ -1,14 +1,17 @@
-<h1>VOTRE FACTURE</h1>
+<div id="show-f">
+  <h1>VOTRE FACTURE</h1>
 
-<h2>Pour <%= @facture.recipient.name %></h2>
-<p><%= @facture.price %> CHF</p>
-<p><%= @facture.limite.strftime("%d/%m/%Y") %></p>
-<p><%= @facture.sold %></p>
+  <h2><%= @facture.recipient.name %></h2>
+  <p>MONTANT : <%= @facture.price %> CHF</p>
+  <p>AVANT LE : <%= @facture.limite.strftime("%d/%m/%Y") %></p>
+  <p>STATUT : <%= @facture.sold %></p>
 
-<%= link_to 'Liste factures', factures_path %> |
-<%= link_to 'Modifier', edit_facture_path(@facture) %> |
-
-<%= link_to "Supprimer",
-            facture_path(@facture),
-            method: :delete,
-            data: { confirm: "Tu es sûr ?" } %>
+  <div>
+    <a href="<%= edit_facture_path(@facture) %>" class="home-f-icone">
+      <%= render inline: Rails.root.join("app/assets/images/edit.svg").read %>
+    </a>
+    <a href="<%= facture_path(@facture) %>" data-method="delete" data-confirm="On est sûr ?" rel="nofollow" class="home-f-icone">
+      <%= render inline: Rails.root.join("app/assets/images/suppr.svg").read %>
+    </a>
+  </div>
+</div>

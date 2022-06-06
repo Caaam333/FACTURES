@@ -47,7 +47,7 @@
     // width: 50%;
     background-color: $dark;
     margin: 2px;
-    padding: 1em;
+    padding: 0.5em;
     border-radius: 3px;
     display: flex;
     justify-content: center;
@@ -59,6 +59,7 @@
 
   .home-f-name {
     width: 65px;
+    font-size: 0.9em;
   }
   .home-f-block {
     min-width: 50px;

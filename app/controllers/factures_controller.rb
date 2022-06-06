@@ -16,6 +16,17 @@ class FacturesController < ApplicationController
   def show
     @facture = Facture.find(params[:id])
     # @recipient = Recipient.find(params[:id])
+    # to_yesorno(@facture.sold)
+
+    # if @facture.sold
+    #   return ‘yes’
+    # else
+    #   return ‘no’
+    # end
+
+    # return "OUI" if @facture.sold == "true"
+    return "NON" if @facture.sold == "false"
+
   end
 
   def new
@@ -60,4 +71,5 @@ class FacturesController < ApplicationController
   def facture_params
     params.require(:facture).permit(:recipient_id, :id, :price, :limite, :sold)
   end
+
 end

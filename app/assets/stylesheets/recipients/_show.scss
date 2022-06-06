@@ -1,0 +1,33 @@
+#show-r {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+
+  h2 {
+    color: $dark;
+    text-decoration: underline;
+    // background-color: $darker;
+    border-radius: 5px;
+    padding: 20px 10px;
+    margin: 20px;
+
+  }
+
+  p {
+    color: $darker;
+    border: 1px solid $darker;
+    border-radius: 5px;
+    padding: 20px 10px;
+    margin: 20px;
+    margin-bottom: 6em;
+
+  }
+
+
+  svg {
+    fill: $darker;
+    width: 2em;
+    height: 2em;
+    margin: 5px;
+  }
+}

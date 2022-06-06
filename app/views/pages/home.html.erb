@@ -4,7 +4,7 @@
     <h2><%= link_to "Liste des bénéficiaires", recipients_path, class: '' %></h2>
     <div class="home-display-r-cards">
       <% @recipients.each do |recipient| %>
-        <p class="home-r-card"><%= recipient.name %></p>
+        <%= link_to recipient.name, recipient_path(recipient), class: 'home-r-card' %>
       <% end %>
     </div>
   </div>
@@ -13,18 +13,15 @@
     <div class="home-display-f-cards">
       <% @factures_not_sold.each do |facture| %>
         <div class="home-f-line">
-          <%= link_to facture_path(facture) do %>
-            <p class="home-f-name"><%= facture.recipient.name %></p> 
-            <p class="home-f-block"><%= facture.price %></p>
-            <p class="home-f-block"><%= facture.limite.strftime("%d.%m.%y") %></p>
-          <%= end %>
+            <%= link_to facture.recipient.name, facture_path(facture), class: 'home-f-name' %> 
+            <%= link_to facture.price, facture_path(facture), class: 'home-f-block' %>
+            <%= link_to facture.limite.strftime("%d.%m.%y"), facture_path(facture), class: 'home-f-block' %>
           <a href="<%= edit_facture_path(facture) %>" class="home-f-icone">
             <%= render inline: Rails.root.join("app/assets/images/edit.svg").read %>
           </a>
           <a href="<%= facture_path(facture) %>" data-method="delete" data-confirm="On est sûr ?" rel="nofollow" class="home-f-icone">
             <%= render inline: Rails.root.join("app/assets/images/suppr.svg").read %>
           </a>
-        
         </div>
       <% end %>
     </div>
