@@ -2,31 +2,13 @@ class FacturesController < ApplicationController
   
   def index
     # @factures = Facture.all
-
-    # if @facture.sold == true
-    #   puts "réglée"
-    # else
-    #   puts "à payer"
-    # end
-
+    
     @factures_sold = Facture.where(sold: "true").order(created_at: :desc).limit(3)
     @factures_not_sold = Facture.where(sold: "false").order(created_at: :desc)
   end
 
   def show
     @facture = Facture.find(params[:id])
-    # @recipient = Recipient.find(params[:id])
-    # to_yesorno(@facture.sold)
-
-    # if @facture.sold
-    #   return ‘yes’
-    # else
-    #   return ‘no’
-    # end
-
-    # return "OUI" if @facture.sold == "true"
-    return "NON" if @facture.sold == "false"
-
   end
 
   def new

@@ -18,21 +18,37 @@
 
   }
 
-  p {
-    color: $darker;
-    border: 1px solid $darker;
-    border-radius: 5px;
-    padding: 20px 10px;
-    margin: 20px;
-    margin-bottom: 6em;
-
-  }
-
+  
 
   svg {
     fill: $darker;
     width: 2em;
     height: 2em;
     margin: 5px;
+  }
+
+  .show-f-info {
+    color: $background;
+    background-color: $dark;
+    // border: 1px solid $darker;
+    border-radius: 5px;
+    padding: 20px 10px;
+    margin: 5px 20px;
+    font-weight: 600;
+    // margin-bottom: 6em;
+    p {
+      color: $darker;
+      font-size: 36px;
+      margin: 0;
+      font-weight: 400;
+    }
+  }
+
+  .svg-supp-update {
+    margin-top: 3em;
+  }
+
+  .show-f-balise {
+    font-size: 24px;
   }
 }

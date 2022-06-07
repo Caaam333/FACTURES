@@ -2,11 +2,32 @@
   <h1>VOTRE FACTURE</h1>
 
   <h2><%= @facture.recipient.name %></h2>
-  <p>MONTANT : <%= @facture.price %> CHF</p>
-  <p>AVANT LE : <%= @facture.limite.strftime("%d/%m/%Y") %></p>
-  <p>STATUT : <%= @facture.sold %></p>
-
-  <div>
+  <div class="show-f-info">
+    <p>MONTANT</p>
+    <div class="show-f-balise">
+      <%= @facture.price %>
+    </div>
+      <p> CHF</p>
+  </div>
+  <div class="show-f-info">
+    <p>AVANT LE</p>
+    <div class="show-f-balise">
+      <%= @facture.limite.strftime("%d/%m/%Y") %>
+    </div>
+  </div>
+  <div class="show-f-info">
+    <p>STATUT</p>
+    <% if @facture.sold == false %>
+    <div class="show-f-balise">
+      <%= "IMPAYÉE" %>
+    </div>
+    <% else %>
+    <div class="show-f-balise">
+      <%= "PAYÉE" %>
+    </div>
+    <% end %>
+  </div>
+  <div class="svg-supp-update">
     <a href="<%= edit_facture_path(@facture) %>" class="home-f-icone">
       <%= render inline: Rails.root.join("app/assets/images/edit.svg").read %>
     </a>

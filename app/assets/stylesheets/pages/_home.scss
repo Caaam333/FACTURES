@@ -23,8 +23,11 @@
   .home-r-card {
     margin: 10px;
     padding: 10px;
-    border: 2px solid $darker;
+    /* border: 2px solid $darker*/
     border-radius: 4px;
+    color: $background;
+    background-color: $darker;
+    font-weight: 600;
   }
 
   .home-display-r-cards {
