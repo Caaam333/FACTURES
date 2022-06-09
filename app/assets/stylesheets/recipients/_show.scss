@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  
+
   h2 {
     color: $dark;
     text-decoration: underline;
@@ -22,7 +22,6 @@
     margin-bottom: 6em;
 
   }
-
 
   svg {
     fill: $darker;
