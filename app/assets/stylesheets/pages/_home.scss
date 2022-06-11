@@ -7,9 +7,12 @@
   justify-content: center;
 
   h2 {
-    margin-top: 75px;
+    margin-top: 70px;
     color: $darker;
     text-decoration: underline;
+    #home-username {
+      margin-bottom: 0;
+    }
   }
 
   svg, img {
@@ -78,5 +81,9 @@
     display: flex;
     justify-content: center;
     // width: 75%;
+  }
+
+  .home-r-list > h2 {
+    margin-top: 20px;
   }
 }

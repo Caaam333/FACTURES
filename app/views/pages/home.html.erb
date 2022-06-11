@@ -1,6 +1,6 @@
 <div id="home-page">
-  <%# <h1>VUE D'ENSEMBLE</h1> %>
-  <div>
+  <h2 id="home-username">Bonjour <%= @user.email.split("@")[0].capitalize %> </h1>
+  <div class="home-r-list">
     <h2><%= link_to "Liste des bénéficiaires", recipients_path, class: '' %></h2>
     <div class="home-display-r-cards">
       <% @recipients.each do |recipient| %>
