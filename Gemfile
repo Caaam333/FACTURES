@@ -27,6 +27,7 @@ gem 'simple_form'
 gem 'bootstrap'
 gem 'flatpickr'
 gem 'devise'
+gem 'stimulus-rails'
 
 # _______
 # Use Active Storage variant
